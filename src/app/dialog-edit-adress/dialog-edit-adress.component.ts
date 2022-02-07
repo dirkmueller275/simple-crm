@@ -11,9 +11,9 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
   styleUrls: ['./dialog-edit-adress.component.scss']
 })
 export class DialogEditAdressComponent implements OnInit {
-  user!: User;
-  loading= false;
+  user: User = new User();
   userId: string;
+  loading = false;
   constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>, private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
@@ -21,18 +21,17 @@ export class DialogEditAdressComponent implements OnInit {
 
 
 
-  saveUser(){
-
-this.firestore
-.collection('users')
-.doc(this.userId)
-.update(this.user.toJSON())
-.then(()=>{
-
-  this.loading=false;
-  this.dialogRef.close();
-})
+  saveUser() {
+    this.firestore
+      .collection('users')
+      .doc(this.userId)
+      .update(this.user.toJSON())
+      .then(() => {
+        this.loading = false;
+        this.dialogRef.close();
+      });
+  }
 
 
   }
-}
+

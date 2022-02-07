@@ -12,7 +12,7 @@ import { DialogEditAdressComponent } from '../dialog-edit-adress/dialog-edit-adr
 })
 export class UserDetailComponent implements OnInit {
 
-  userId!:string;
+  userId :string | any;
   user: User = new User();
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
