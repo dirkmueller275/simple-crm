@@ -10,7 +10,7 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
   styleUrls: ['./dialog-edit-user.component.scss']
 })
 export class DialogEditUserComponent implements OnInit {
-  user!: User;
+  user: User = new User();
   loading=false;
   birthDate!: Date;
   userId!: string;
@@ -22,6 +22,7 @@ export class DialogEditUserComponent implements OnInit {
 
 
   saveUser(){
+    if(this.userId){
 this.loading=true;
     this.firestore
 .collection('users')
@@ -31,8 +32,10 @@ this.loading=true;
 
   this.loading=false;
   this.dialogRef.close();
-})
+});
 
-  }
+  }else{
+
+  }}
 
 }

@@ -27,7 +27,7 @@ this.getUser();
 }
 
 getUser(){
-
+if(this.userId){
   this.firestore
   .collection('users')
   .doc(this.userId)
@@ -36,6 +36,7 @@ getUser(){
     this.user= new User(user);
 
   })
+}
 }
 
 editMenu(){
