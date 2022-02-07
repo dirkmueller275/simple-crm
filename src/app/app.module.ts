@@ -28,6 +28,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { DialogEditAdressComponent } from './dialog-edit-adress/dialog-edit-adress.component';
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
     MatNativeDateModule,
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    
+    AngularFireModule,
     AngularFirestoreModule,
     MatProgressBarModule,
     MatCardModule,
