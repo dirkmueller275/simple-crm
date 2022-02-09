@@ -55,8 +55,8 @@ import { AngularFireModule } from '@angular/fire/compat';
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    AngularFireModule,
+
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     MatProgressBarModule,
     MatCardModule,
